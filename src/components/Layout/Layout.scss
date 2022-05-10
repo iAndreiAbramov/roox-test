@@ -1,0 +1,17 @@
+$navbar-width: 152px;
+
+.navbarContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: $navbar-width;
+}
+
+.contentContainer {
+    margin-left: $navbar-width;
+    overflow-y: scroll;
+
+    min-height: 100vh;
+}
