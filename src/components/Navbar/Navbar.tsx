@@ -1,7 +1,8 @@
+import { AppRoute } from 'constants/AppRoute';
 import { QueryParam } from 'constants/QueryParam';
 
 import React, { useCallback } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useQuery } from 'hooks/useQuery';
 
 import { SortButton } from 'components/SortButton';
@@ -12,17 +13,16 @@ import './Navbar.scss';
 export const Navbar: React.FC = () => {
     const navigate = useNavigate();
     const query = useQuery();
-    const { pathname } = useLocation();
 
     const handleSortByClick = useCallback(
         (param: SortType) => {
             query.set(QueryParam.Sort, param);
             navigate({
-                pathname,
+                pathname: AppRoute.Users(),
                 search: query.toString(),
             });
         },
-        [query, navigate, pathname],
+        [query, navigate],
     );
 
     return (

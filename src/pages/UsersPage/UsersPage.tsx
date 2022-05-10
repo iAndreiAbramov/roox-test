@@ -1,13 +1,21 @@
-import { AppRoute } from 'constants/AppRoute';
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { cn } from '@bem-react/classname';
+
+import { UserCard } from 'components/UserCard';
+
+import './UsersPage.scss';
+
+const CnUserPage = cn('userPage');
 
 export const UsersPage: React.FC = () => {
     return (
-        <>
-            <div>users list page</div>
-            <Link to={AppRoute.User(1)}>to user page</Link>
-        </>
+        <main className={CnUserPage()}>
+            <h1 className={CnUserPage('title')}>Список пользователей</h1>
+            <div className={CnUserPage('cardsContainer')}>
+                <UserCard />
+                <UserCard />
+                <span className={CnUserPage('usersCount')}>Найдено 10 пользователей</span>
+            </div>
+        </main>
     );
 };

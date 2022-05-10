@@ -1,0 +1,40 @@
+@import "../../variables";
+
+.userCard {
+    padding: 10px;
+
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 11px;
+    line-height: 1;
+
+    background: $bgc-gray;
+    border-radius: 8px;
+}
+
+.userCard-row {
+    display: flex;
+    gap: 7px;
+
+    &:not(&:first-of-type) {
+        margin-top: 8px;
+    }
+}
+
+.userCard-itemName {
+    color: $fc-gray;
+}
+
+.userCard-itemValue {
+    color: $fc-dark;
+}
+
+.userCard-link {
+    margin-left: auto;
+
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 12px;
+    line-height: 1;
+    color: $fc-blue;
+}

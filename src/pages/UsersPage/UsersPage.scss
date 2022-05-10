@@ -1,0 +1,32 @@
+@import '../../variables';
+
+.userPage {
+    padding: 20px 30px 25px;
+}
+
+.userPage-cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding-top: 15px;
+    max-width: 420px;
+}
+
+.userPage-title {
+    font-weight: $fw-title;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.userPage-usersCount {
+    display: block;
+    margin-left: auto;
+
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 12px;
+    line-height: 1.17;
+    color: $fc-dark;
+}

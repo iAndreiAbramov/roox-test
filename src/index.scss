@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    overflow: hidden;
     font-family: 'Roboto', 'Arial', sans-serif;
 }
 
@@ -12,9 +11,9 @@ body {
     }
 
     //todo: delete
-    & * {
-        border: 1px solid darkgreen;
-    }
+    //& * {
+    //    border: 1px solid darkgreen;
+    //}
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -28,4 +27,15 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0 none;
+    clip-path: inset(100%);
 }
