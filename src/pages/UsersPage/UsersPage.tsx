@@ -5,7 +5,7 @@ import { cn } from '@bem-react/classname';
 import { useSortType } from 'hooks/useSortType';
 import { fetchUsers } from 'services/users';
 import { ReactComponent as Preloader } from 'svg/preloader.svg';
-import { IUser } from 'types/user.types';
+import { IUserBack } from 'types/user.types';
 
 import { UserCard } from 'components/UserCard';
 
@@ -15,7 +15,7 @@ const CnUserPage = cn('userPage');
 
 export const UsersPage: React.FC = () => {
     const [fetchStatus, setFetchStatus] = useState<FetchStatus>(FetchStatus.Initial);
-    const [users, setUsers] = useState<IUser[]>([]);
+    const [users, setUsers] = useState<IUserBack[]>([]);
 
     const isDataFetching = useMemo(() => fetchStatus === FetchStatus.InProgress, [fetchStatus]);
     const isDataFetched = useMemo(() => fetchStatus === FetchStatus.Done, [fetchStatus]);
