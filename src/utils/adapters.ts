@@ -1,4 +1,4 @@
-import { IUserBack } from 'types/user.types';
+import { IUserBack, IUserCardData } from 'types/user.types';
 import { UserFormPrefilledValues } from 'types/user-from.types';
 
 export const normaliseUserDataToForm = (userData: IUserBack): UserFormPrefilledValues => {
@@ -13,4 +13,15 @@ export const normaliseUserDataToForm = (userData: IUserBack): UserFormPrefilledV
         phone,
         website,
     };
+};
+
+export const normalizeUsersList = (usersList: IUserBack[]): IUserCardData[] => {
+    return usersList.map((user) => {
+        return {
+            name: user.name,
+            city: user.address.city,
+            company: user.company.name,
+            id: user.id,
+        };
+    });
 };

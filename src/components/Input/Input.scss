@@ -1,0 +1,62 @@
+@import '../../variables';
+
+.input-label {
+    min-width: max-content;
+    max-width: 100%;
+}
+
+.input-label_textArea {
+    width: 100%;
+}
+
+.input-labelText {
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 8px;
+    line-height: 1;
+    color: $fc-dark;
+}
+
+.input-input {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    max-width: 100%;
+    min-height: 24px;
+    padding: 5px 10px;
+    margin: 0;
+
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 10px;
+    line-height: 1;
+    color: $fc-dark;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: $border-input-regular;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    &:focus {
+        outline: $border-input-regular;
+    }
+
+    &:disabled {
+        color: $fc-disabled;
+    }
+}
+
+.input-input_error {
+    border: $border-input-error;
+}
+
+.input-input_textArea {
+    margin-top: 5px;
+    width: 100%;
+    min-height: 55px;
+    resize: none;
+    font-family: $ff-regular;
+}

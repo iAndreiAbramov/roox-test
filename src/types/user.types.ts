@@ -21,3 +21,10 @@ export interface IUserBack {
         bs: string;
     };
 }
+
+export interface IUserCardData {
+    city: string;
+    name: string;
+    company: string;
+    id: number;
+}
