@@ -2,6 +2,7 @@ import { FetchStatus } from 'constants/FetchStatus';
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { cn } from '@bem-react/classname';
+import { useSortType } from 'hooks/useSortType';
 import { fetchUsers } from 'services/users';
 import { ReactComponent as Preloader } from 'svg/preloader.svg';
 import { IUser } from 'types/user.types';
@@ -19,6 +20,8 @@ export const UsersPage: React.FC = () => {
     const isDataFetching = useMemo(() => fetchStatus === FetchStatus.InProgress, [fetchStatus]);
     const isDataFetched = useMemo(() => fetchStatus === FetchStatus.Done, [fetchStatus]);
     const isDataFailed = useMemo(() => fetchStatus === FetchStatus.Error, [fetchStatus]);
+
+    const sortedUsers = useSortType(users);
 
     useEffect(() => {
         setFetchStatus(FetchStatus.InProgress);
@@ -39,7 +42,7 @@ export const UsersPage: React.FC = () => {
                 {isDataFetching && <Preloader />}
                 {isDataFetched && (
                     <>
-                        {users.map(({ id, name, company, address }) => (
+                        {sortedUsers.map(({ id, name, company, address }) => (
                             <UserCard
                                 key={id}
                                 id={id}
