@@ -1,3 +1,5 @@
+@import '../../variables';
+
 $navbar-width: 152px;
 
 .navbarContainer {
@@ -7,11 +9,15 @@ $navbar-width: 152px;
     bottom: 0;
 
     width: $navbar-width;
+    padding: 36px 20px;
+
+    background-color: $bgc-dark;
 }
 
 .contentContainer {
     margin-left: $navbar-width;
-    overflow-y: scroll;
 
     min-height: 100vh;
+
+    background-color: $bgc-light;
 }
