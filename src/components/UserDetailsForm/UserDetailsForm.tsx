@@ -1,7 +1,8 @@
 import React from 'react';
-import { Field, Form } from 'react-final-form';
+import { Form } from 'react-final-form';
 import { cn } from '@bem-react/classname';
 
+import { Input } from 'components/Input';
 import { SubmitButton } from 'components/SubmitButton';
 
 import { IUserFormProps } from './UserDetailsForm.types';
@@ -21,150 +22,15 @@ export const UserDetailsForm: React.FC<IUserFormProps> = ({
             {({ handleSubmit, submitFailed, hasValidationErrors }) => (
                 <form className={CnUserForm()} onSubmit={handleSubmit}>
                     <div className={CnUserForm('innerWrapper')}>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>Name</div>
-                            <Field name="name">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>User name</div>
-                            <Field name="userName">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>Email</div>
-                            <Field name="email">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>Street</div>
-                            <Field name="street">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>City</div>
-                            <Field name="city">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>Zip code</div>
-                            <Field name="zip">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>Phone</div>
-                            <Field name="phone">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label')}>
-                            <div className={CnUserForm('labelText')}>Website</div>
-                            <Field name="website">
-                                {({ input, meta }) => (
-                                    <input
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        type="text"
-                                        placeholder="Enter your name"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
-                        <label className={CnUserForm('label', { textArea: true })}>
-                            <div className={CnUserForm('labelText')}>Comment</div>
-                            <Field name="comment">
-                                {({ input, meta }) => (
-                                    <textarea
-                                        {...input}
-                                        className={CnUserForm('input', {
-                                            textArea: true,
-                                            error: submitFailed && meta.invalid,
-                                        })}
-                                        placeholder="Enter your comment"
-                                        disabled={!isEditing}
-                                    />
-                                )}
-                            </Field>
-                        </label>
+                        <Input label="Name" name="name" isEditing={isEditing} />
+                        <Input label="User name" name="userName" isEditing={isEditing} />
+                        <Input label="Email" name="email" isEditing={isEditing} />
+                        <Input label="Street" name="street" isEditing={isEditing} />
+                        <Input label="City" name="city" isEditing={isEditing} />
+                        <Input label="Zip code" name="zip" isEditing={isEditing} />
+                        <Input label="Phone" name="phone" isEditing={isEditing} />
+                        <Input label="Website" name="website" isEditing={isEditing} />
+                        <Input label="Comment" name="comment" isEditing={isEditing} isTextarea />
                     </div>
                     <SubmitButton
                         customClass={CnUserForm('submitButton')}
