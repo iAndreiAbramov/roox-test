@@ -8,7 +8,7 @@ const EMAIL_PATTERN = new RegExp(
 
 export const validateUserForm = (values: IUserFormValues): UserFormErrors => {
     const errors = {} as UserFormErrors;
-    const { name, userName, email, city, phone, zip, street, website, comment } = values;
+    const { name, userName, email, city, phone, zip, street, website } = values;
 
     if (!name || name.length === 0) {
         errors.name = true;
@@ -40,10 +40,6 @@ export const validateUserForm = (values: IUserFormValues): UserFormErrors => {
 
     if (!website || website.length === 0) {
         errors.website = true;
-    }
-
-    if (!comment || comment.length === 0) {
-        errors.comment = true;
     }
 
     return errors;
