@@ -11,9 +11,13 @@ import './UserDetailsForm.scss';
 
 const CnUserForm = cn('userForm');
 
-export const UserDetailsForm: React.FC<IUserFormProps> = ({ isEditing, handleFormSubmit }) => {
+export const UserDetailsForm: React.FC<IUserFormProps> = ({
+    isEditing,
+    handleFormSubmit,
+    initialValues,
+}) => {
     return (
-        <Form onSubmit={handleFormSubmit} validate={validateUserForm}>
+        <Form onSubmit={handleFormSubmit} validate={validateUserForm} initialValues={initialValues}>
             {({ handleSubmit, submitFailed, hasValidationErrors }) => (
                 <form className={CnUserForm()} onSubmit={handleSubmit}>
                     <div className={CnUserForm('innerWrapper')}>

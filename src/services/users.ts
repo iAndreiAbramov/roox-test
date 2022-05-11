@@ -10,7 +10,7 @@ export const fetchUsers = async (): Promise<IUserBack[]> =>
         return res.json() as Promise<IUserBack[]>;
     });
 
-export const fetchUser = async (id: number): Promise<IUserBack | void> =>
+export const fetchUser = async (id: string): Promise<IUserBack> =>
     await fetch(ApiRoute.User(id)).then((res) => {
         if (!res.ok) {
             throw new Error(res.statusText);

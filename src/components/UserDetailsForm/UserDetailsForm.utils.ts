@@ -1,4 +1,4 @@
-import { IUserFormValues } from './UserDetailsForm.types';
+import { IUserFormValues } from 'types/user-from.types';
 
 type UserFormErrors = Record<keyof IUserFormValues, boolean | undefined>;
 
