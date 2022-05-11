@@ -1,12 +1,12 @@
 import { QueryParam } from 'constants/QueryParam';
 
-import { IUser } from 'types/user.types';
+import { IUserBack } from 'types/user.types';
 
 import { SortType } from 'components/SortButton/SortButton.types';
 
 import { useQuery } from './useQuery';
 
-export const useSortType = (data: IUser[]): IUser[] => {
+export const useSortType = (data: IUserBack[]): IUserBack[] => {
     const query = useQuery();
     const sortOrder: string | null = query.get(QueryParam.Sort);
 
