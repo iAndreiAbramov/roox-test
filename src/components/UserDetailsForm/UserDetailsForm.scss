@@ -1,0 +1,92 @@
+@import '../../variables';
+
+.userForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userForm .userForm-submitButton {
+    background-color: $bgc-green;
+    margin-left: auto;
+    min-width: 85px;
+    min-height: 24px;
+
+    &:disabled {
+        background-color: $bgc-button-disabled;
+    }
+}
+
+.userForm-innerWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px 12px;
+
+    border: $border-gray;
+    border-radius: 8px;
+}
+
+.userForm-label {
+    min-width: max-content;
+    max-width: 100%;
+}
+
+.userForm-label_textArea {
+    width: 100%;
+}
+
+.userForm-labelText {
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 8px;
+    line-height: 1;
+    color: $fc-dark;
+}
+
+.userForm-input {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    max-width: 100%;
+    min-height: 24px;
+    padding: 5px 10px;
+    margin: 0;
+
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 10px;
+    line-height: 1;
+    color: $fc-dark;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: $border-input-regular;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    &:focus {
+        outline: $border-input-regular;
+    }
+
+    &:disabled {
+        color: $fc-disabled;
+    }
+}
+
+.userForm-input_error {
+    border: $border-input-error;
+}
+
+.userForm-input_textArea {
+    margin-top: 5px;
+    width: 100%;
+    min-height: 55px;
+    resize: none;
+    font-family: $ff-regular;
+}
+
+

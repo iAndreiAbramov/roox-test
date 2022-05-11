@@ -1,6 +1,8 @@
+@import './variables.scss';
+
 body {
     margin: 0;
-    font-family: 'Roboto', 'Arial', sans-serif;
+    font-family: $ff-regular;
 }
 
 #root {
