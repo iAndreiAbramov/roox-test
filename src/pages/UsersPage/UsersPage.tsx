@@ -12,7 +12,7 @@ import { normalizeUsersList } from 'utils/adapters';
 
 import './UsersPage.scss';
 
-const CnUserPage = cn('userPage');
+const CnUsersPage = cn('usersPage');
 
 export const UsersPage: React.FC = () => {
     const [fetchStatus, setFetchStatus] = useState<FetchStatus>(FetchStatus.Initial);
@@ -37,9 +37,9 @@ export const UsersPage: React.FC = () => {
     }, []);
 
     return (
-        <main className={CnUserPage()}>
-            <h1 className={CnUserPage('title')}>Список пользователей</h1>
-            <div className={CnUserPage('cardsContainer')}>
+        <main className={CnUsersPage()}>
+            <h1 className={CnUsersPage('title')}>Список пользователей</h1>
+            <div className={CnUsersPage('cardsContainer')}>
                 {isDataFetching && <Preloader />}
                 {isDataFetched && (
                     <>
@@ -53,12 +53,12 @@ export const UsersPage: React.FC = () => {
                             />
                         ))}
                         {users.length > 0 ? (
-                            <span className={CnUserPage('usersCount')}>
+                            <span className={CnUsersPage('usersCount')}>
                                 Найдено {users.length} пользователей
                             </span>
                         ) : (
                             <span
-                                className={CnUserPage('usersCount', { empty: users.length === 0 })}
+                                className={CnUsersPage('usersCount', { empty: users.length === 0 })}
                             >
                                 Список пользователей пуст
                             </span>
@@ -67,7 +67,7 @@ export const UsersPage: React.FC = () => {
                 )}
                 {isDataFailed && (
                     <span
-                        className={CnUserPage('usersCount', {
+                        className={CnUsersPage('usersCount', {
                             error: fetchStatus === FetchStatus.Error,
                         })}
                     >

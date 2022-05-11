@@ -1,10 +1,14 @@
 @import '../../variables';
 
-.userPage {
+.usersPage {
     padding: 20px 30px 25px;
+
+    @media screen and (max-width: 400px){
+        padding: 20px 15px 25px;
+    }
 }
 
-.userPage-cardsContainer {
+.usersPage-cardsContainer {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -13,14 +17,14 @@
     max-width: 420px;
 }
 
-.userPage-title {
+.usersPage-title {
     font-weight: $fw-title;
     font-size: 14px;
     line-height: 1.14;
     color: $fc-dark;
 }
 
-.userPage-usersCount {
+.usersPage-usersCount {
     display: block;
     margin-left: auto;
 
@@ -31,11 +35,11 @@
     color: $fc-dark;
 }
 
-.userPage-usersCount_empty {
+.usersPage-usersCount_empty {
     margin-left: 0;
 }
 
-.userPage-usersCount_error {
+.usersPage-usersCount_error {
     margin-left: 0;
     color: $fc-error;
 }
