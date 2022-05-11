@@ -5,9 +5,10 @@ import { cn } from '@bem-react/classname';
 import { useSortType } from 'hooks/useSortType';
 import { fetchUsers } from 'services/users';
 import { ReactComponent as Preloader } from 'svg/preloader.svg';
-import { IUserBack } from 'types/user.types';
+import { IUserCardData } from 'types/user.types';
 
 import { UserCard } from 'components/UserCard';
+import { normalizeUsersList } from 'utils/adapters';
 
 import './UsersPage.scss';
 
@@ -15,7 +16,7 @@ const CnUserPage = cn('userPage');
 
 export const UsersPage: React.FC = () => {
     const [fetchStatus, setFetchStatus] = useState<FetchStatus>(FetchStatus.Initial);
-    const [users, setUsers] = useState<IUserBack[]>([]);
+    const [users, setUsers] = useState<IUserCardData[]>([]);
 
     const isDataFetching = useMemo(() => fetchStatus === FetchStatus.InProgress, [fetchStatus]);
     const isDataFetched = useMemo(() => fetchStatus === FetchStatus.Done, [fetchStatus]);
@@ -27,7 +28,7 @@ export const UsersPage: React.FC = () => {
         setFetchStatus(FetchStatus.InProgress);
         fetchUsers()
             .then((response) => {
-                setUsers(response);
+                setUsers(normalizeUsersList(response));
                 setFetchStatus(FetchStatus.Done);
             })
             .catch(() => {
@@ -42,13 +43,13 @@ export const UsersPage: React.FC = () => {
                 {isDataFetching && <Preloader />}
                 {isDataFetched && (
                     <>
-                        {sortedUsers.map(({ id, name, company, address }) => (
+                        {sortedUsers.map(({ id, name, company, city }) => (
                             <UserCard
                                 key={id}
                                 id={id}
-                                city={address.city}
+                                city={city}
                                 name={name}
-                                companyName={company.name}
+                                companyName={company}
                             />
                         ))}
                         {users.length > 0 ? (
